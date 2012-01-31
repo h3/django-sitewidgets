@@ -1,0 +1,33 @@
+{% spaceless %}
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+    version: 2,
+    type: 'profile',
+    rpp: 6,
+    interval: 30000,
+    width: 380,
+    height: 150,
+    theme: {
+        shell: {
+            background: '#228ED6',
+            color: '#ffffff'
+        },
+        tweets: {
+            background: '#eeeeee',
+            color: '#333333',
+            links: '#228ED6'
+        }
+    },
+    features: {
+        scrollbar: true,
+        loop: false,
+        live: true,
+        hashtags: true,
+        timestamp: true,
+        avatars: false,
+        behavior: 'all'
+    }
+}).render().setUser('{{ username}}').start();
+</script>
+{% endspaceless %}
