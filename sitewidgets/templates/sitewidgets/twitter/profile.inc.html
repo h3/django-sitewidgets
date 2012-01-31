@@ -4,29 +4,29 @@
 new TWTR.Widget({
     version: 2,
     type: 'profile',
-    rpp: 6,
-    interval: 30000,
-    width: 380,
-    height: 150,
+    rpp: {{ rpp|default:"30000" }},
+    interval: {{ interval|default:"30000" }},
+    width: {{ width|default:"380" }},
+    height: {{ height|default:"150" }},
     theme: {
         shell: {
-            background: '#228ED6',
-            color: '#ffffff'
+            background: '{{ shell_background|default:"#777777" }}',
+            color: '{{ shell_color|default:"#ffffff" }}'
         },
         tweets: {
-            background: '#eeeeee',
-            color: '#333333',
-            links: '#228ED6'
+            background: '{{ tweets_background|default:"#eeeeee" }}',
+            color: '{{ tweets_color|default:"#333333" }}',
+            links: '{{ tweets_links|default:"#226699" }}'
         }
     },
     features: {
-        scrollbar: true,
-        loop: false,
-        live: true,
-        hashtags: true,
-        timestamp: true,
-        avatars: false,
-        behavior: 'all'
+        scrollbar: {{ scrollbar|default:"true" }},
+        loop: {{ loop|default:"false" }},
+        live: {{ live|default:"true" }},
+        hashtags: {{ hashtags|default:"true" }},
+        timestamp: {{ timestamp|default:"true" }},
+        avatars: {{ avatars|default:"false" }},
+        behavior: '{{ behavior|default:"all" }}'
     }
 }).render().setUser('{{ username}}').start();
 </script>
