@@ -53,6 +53,7 @@ Like box
 ^^^^^^^^
 
 ::
+
     {% with width=290 height=380 %}
     {% fb_like_box "https://www.facebook.com/pages/My-Page/0123456789" %}
     {% endwith %}
